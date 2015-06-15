@@ -7,8 +7,8 @@ serviceModule.service('flickrImageService', ['$q', 'httpService', function ($q, 
         getRecentImages: function () {
             var deferred = $q.defer();
 
-            httpService.get(flickerRecentImageServiceUrl).then(function(songs) {
-                deferred.resolve(songs);
+            httpService.get(flickerRecentImageServiceUrl).then(function(imageResponse) {
+                deferred.resolve(imageResponse);
             });
 
             return deferred.promise;
