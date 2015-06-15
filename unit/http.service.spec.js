@@ -7,16 +7,16 @@ describe('Http Service', function() {
    beforeEach(inject(function($injector) {
      $httpBackend = $injector.get('$httpBackend');
      httpService = $injector.get('httpService');
-     requestHandler = $httpBackend.when('GET', 'https://api.flickr.com/services/feeds/photos_public.gne')
+     requestHandler = $httpBackend.when('JSONP', 'https://api.flickr.com/services/feeds/photos_public.gne?format=json&jsoncallback=JSON_CALLBACK')
                           .respond({mockResponse: 'mock data from flickr'});
    }));
 
   it("should have a get method defined", function () {
-      expect(httpService.get).toBeDefined();  
+      expect(httpService.getJsonp).toBeDefined();  
   });
 
   it("should return a response", function () {
-    httpService.get("https://api.flickr.com/services/feeds/photos_public.gne").then(function(response) {
+    httpService.getJsonp("https://api.flickr.com/services/feeds/photos_public.gne?format=json&jsoncallback=JSON_CALLBACK").then(function(response) {
       expect(response).not.toBe(null);
       expect(response.mockResponse).toEqual('mock data from flickr');
     });

@@ -10,7 +10,7 @@ describe('Flickr Image Service', function() {
       httpService = $injector.get('httpService');
       def = $q.defer();
       def.resolve({mockResponse: 'mock data from flickr'});
-      spyOn(httpService, 'get').and.returnValue(def.promise);
+      spyOn(httpService, 'getJsonp').and.returnValue(def.promise);
    }));
 
     it("should have a getRecentImages method defined", function () {
@@ -18,7 +18,7 @@ describe('Flickr Image Service', function() {
     });
 
     it("should return a list of images", function () {
-      httpService.get("https://api.flickr.com/services/feeds/photos_public.gne?format=json").then(function(response) {
+      httpService.getJsonp("https://api.flickr.com/services/feeds/photos_public.gne?format=json&jsoncallback=JSON_CALLBACK").then(function(response) {
       expect(response).not.toBe(null);
       expect(response.mockResponse).toEqual('mock data from flickr');
     });    
