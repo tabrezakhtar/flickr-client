@@ -1,11 +1,16 @@
 controllerModule.controller('HomeCtrl', ['$scope', 'flickrImageService', function ($scope, flickrImageService) {
 	'use strict';
 
-	$scope.message = 'Home Controller';	
+	$scope.vm = {
+		title: '',
+		items: null
+	};	
 
 	flickrImageService.getRecentImages().then(
-		function(data) {
+		function(flickrResult) {
 			debugger;
+			$scope.vm.title = flickrResult.title;
+			$scope.vm.items = flickrResult.items;
 		}
 	)
 }]);

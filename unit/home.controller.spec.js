@@ -15,7 +15,7 @@ describe('HomeController', function() {
         $controller('HomeCtrl', {'$scope': $scope, 'flickrImageService': flickrImageService});
     }));
 
-    it('should make about menu item active.', function() {
-        expect($scope.message).toEqual('Home Controller');
+    it('should have a title defined', function() {
+        expect($scope.vm.title).toEqual('');
     });
 });
