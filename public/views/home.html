@@ -6,9 +6,21 @@
   </div>
 </nav>
 
-<div class="row">
-
-  	{{vm.title}}
-
-
+<div class="panel panel-default">
+  <div class="panel-heading">
+    <input type="text" class="form-control" id="searchTags" placeholder="Filter by Tags" ng-model="vm.filter">
+  </div>
+  <div class="panel-body">
+    <div class="row">
+		<div ng-repeat="item in vm.items | filter:vm.filter" class="col-md-6 col-md-6">			
+        	<div class="thumbnail">
+          		<img data-src="{{item.media.m}}" alt="{{item.title}}" src="" data-holder-rendered="true">
+	          	<div class="caption">
+	            	<h4 id="thumbnail-label">{{item.author}}<a class="anchorjs-link" href="#thumbnail-label"><span class="anchorjs-icon"></span></a></h4>
+	            	<small>tags: <strong>{{item.tags}}</strong></small>
+	          	</div>	        	
+      		</div>
+		</div>
+	</div>
+  </div>
 </div>

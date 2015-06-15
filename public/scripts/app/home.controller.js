@@ -3,12 +3,12 @@ controllerModule.controller('HomeCtrl', ['$scope', 'flickrImageService', functio
 
 	$scope.vm = {
 		title: '',
-		items: null
+		items: null,
+		filter: ''
 	};	
 
 	flickrImageService.getRecentImages().then(
 		function(flickrResult) {
-			debugger;
 			$scope.vm.title = flickrResult.title;
 			$scope.vm.items = flickrResult.items;
 		}
