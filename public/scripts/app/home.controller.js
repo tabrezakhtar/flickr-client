@@ -7,9 +7,11 @@ controllerModule.controller('HomeCtrl', ['$scope', 'flickrImageService', functio
 		filter: ''
 	};
 
+	getRecentImages();
+
 	$scope.search = function() {
 		getRecentImages();
-	}();	
+	};
 
 	function getRecentImages() {
 		flickrImageService.getRecentImages($scope.vm.filter).then(

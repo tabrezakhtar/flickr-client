@@ -10,11 +10,11 @@
   <div class="panel-heading">
     <div class="row">
 		<div class="col-lg-12">
-			<form>
+			<form ng-submit="search()">
 			    <div class="input-group">
 			      	<input type="text" class="form-control" id="searchTags" placeholder="Filter by Tags" ng-model="vm.filter">
 			      	<span class="input-group-btn">
-			        	<input class="btn btn-primary" type="submit" ng-click="search()">Search</>
+			        	<input class="btn btn-primary" value="Search" type="submit">
 			    	</span>
 		    	</div>
 	    	</form>
