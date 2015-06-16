@@ -10,24 +10,25 @@
   <div class="panel-heading">
     <div class="row">
 		<div class="col-lg-12">
-		    <div class="input-group">
-		      	<input type="text" class="form-control" id="searchTags" placeholder="Filter by Tags" ng-model="vm.filter">
-		      	<span class="input-group-btn">
-		        	<button class="btn btn-primary" type="button">Go!</button>
-		    	</span>
-	    	</div>
+			<form>
+			    <div class="input-group">
+			      	<input type="text" class="form-control" id="searchTags" placeholder="Filter by Tags" ng-model="vm.filter">
+			      	<span class="input-group-btn">
+			        	<input class="btn btn-primary" type="submit" ng-click="search()">Search</>
+			    	</span>
+		    	</div>
+	    	</form>
 	  	</div>
   	</div>
-
   </div>
 
   <div class="panel-body">
     <div class="row">
-		<div ng-repeat="item in vm.items | filter:vm.filter" class="col-md-6 col-md-6">			
+		<div ng-repeat="item in vm.items" class="col-md-6 col-md-6">			
         	<div class="thumbnail">
           		<img data-src="{{item.media.m}}" alt="{{item.title}}" src="" data-holder-rendered="true">
 	          	<div class="caption">
-	            	<h4 id="thumbnail-label">{{item.author}}<a class="anchorjs-link" href="#thumbnail-label"><span class="anchorjs-icon"></span></a></h4>
+	            	<h4 id="thumbnail-label">Author: {{item.author}}<a class="anchorjs-link" href="#thumbnail-label"><span class="anchorjs-icon"></span></a></h4>
 	            	<small>tags: <strong>{{item.tags}}</strong></small>
 	          	</div>	        	
       		</div>

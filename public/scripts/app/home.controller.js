@@ -12,5 +12,9 @@ controllerModule.controller('HomeCtrl', ['$scope', 'flickrImageService', functio
 			$scope.vm.title = flickrResult.title;
 			$scope.vm.items = flickrResult.items;
 		}
-	)
+	);
+
+	$scope.search = function() {
+		alert($scope.vm.filter);
+	};
 }]);
