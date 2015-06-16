@@ -8,8 +8,19 @@
 
 <div class="panel panel-default">
   <div class="panel-heading">
-    <input type="text" class="form-control" id="searchTags" placeholder="Filter by Tags" ng-model="vm.filter">
+    <div class="row">
+		<div class="col-lg-12">
+		    <div class="input-group">
+		      	<input type="text" class="form-control" id="searchTags" placeholder="Filter by Tags" ng-model="vm.filter">
+		      	<span class="input-group-btn">
+		        	<button class="btn btn-primary" type="button">Go!</button>
+		    	</span>
+	    	</div>
+	  	</div>
+  	</div>
+
   </div>
+
   <div class="panel-body">
     <div class="row">
 		<div ng-repeat="item in vm.items | filter:vm.filter" class="col-md-6 col-md-6">			

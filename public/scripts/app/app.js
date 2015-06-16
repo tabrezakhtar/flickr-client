@@ -11,10 +11,14 @@ var flickrApp = angular
     'use strict';
 
     $routeProvider
-      .when('/test', {
+      .when('/home', {
         templateUrl: 'views/home.html',
         controller: 'HomeCtrl'
       })
+      .otherwise({
+        templateUrl: 'views/home.html',
+        controller: 'HomeCtrl'
+      });
   }]);
 
 var controllerModule = angular.module('flickrApp.controllers', []);
