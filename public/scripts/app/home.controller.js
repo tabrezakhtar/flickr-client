@@ -5,16 +5,18 @@ controllerModule.controller('HomeCtrl', ['$scope', 'flickrImageService', functio
 		title: '',
 		items: null,
 		filter: ''
-	};	
-
-	flickrImageService.getRecentImages().then(
-		function(flickrResult) {
-			$scope.vm.title = flickrResult.title;
-			$scope.vm.items = flickrResult.items;
-		}
-	);
+	};
 
 	$scope.search = function() {
-		alert($scope.vm.filter);
-	};
+		getRecentImages();
+	}();	
+
+	function getRecentImages() {
+		flickrImageService.getRecentImages($scope.vm.filter).then(
+			function(flickrResult) {
+				$scope.vm.title = flickrResult.title;
+				$scope.vm.items = flickrResult.items;
+			}
+		);
+	}
 }]);
