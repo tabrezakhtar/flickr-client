@@ -3,9 +3,7 @@ var flickrApp = angular
     'ngRoute', 
     'ui.bootstrap',
     'flickrApp.controllers',
-	'flickrApp.services',
-	'flickrApp.directives',
-	'flickrApp.mediators'
+	  'flickrApp.services'
   ])
   .config(['$routeProvider', function ($routeProvider) {
     'use strict';
@@ -23,5 +21,3 @@ var flickrApp = angular
 
 var controllerModule = angular.module('flickrApp.controllers', []);
 var serviceModule = angular.module('flickrApp.services', []);
-var directiveModule = angular.module('flickrApp.directives', []);
-var mediatorModule = angular.module('flickrApp.mediators', []);

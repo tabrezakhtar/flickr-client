@@ -7,6 +7,7 @@ serviceModule.service('flickrImageService', ['$q', 'httpService', function ($q, 
         getRecentImages: function (search) {
             var deferred = $q.defer();
 
+            search = search.split(' ').join(',');
             httpService.getJsonp(flickerRecentImageServiceUrl + '&tags=' + search).then(function(imageResponse) {
                 deferred.resolve(imageResponse);
             });
