@@ -10,7 +10,7 @@ Install **httpster**.  This is used to serve out the files and is a simple alter
 Install the dependencies
 
     npm install -g gulp
-	npm install
+	npm install 
 
 Compile the scripts
 
