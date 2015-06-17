@@ -3,10 +3,6 @@
 
 **How to run the project**
 
-Install **httpster**.  This is used to serve out the files and is a simple alternative to node+express.
-
-    npm install -g httpster
-
 Install the dependencies
 
     npm install -g gulp
@@ -20,8 +16,8 @@ There is also `gulp build-release` for minified scripts for release
 
 Run the server
 
-	httpster
-Go to [http://localhost:3333/public/flickr-viewer.html](http://localhost:3333/public/flickr-viewer.html)
+	node server
+Go to [http://localhost:3333](http://localhost:3333)
 
 **How to run the tests**
 
