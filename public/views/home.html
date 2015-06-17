@@ -24,15 +24,14 @@
 
   <div class="panel-body">
     <div class="row">
-		<div ng-repeat="item in vm.items" class="col-md-6 col-md-6">			
-        	<div class="thumbnail">
-          		<img src="{{item.media.m}}" alt="{{item.title}}">
-	          	<div class="caption">
-	            	<h4 id="thumbnail-label">Author: {{item.author}}<a class="anchorjs-link" href="#thumbnail-label"><span class="anchorjs-icon"></span></a></h4>
-	            	<small>tags: <strong>{{item.tags}}</strong></small>
-	          	</div>	        	
-      		</div>
-		</div>
-	</div>
+  		<div ng-repeat="item in vm.items" class="col-md-4 col-md-4 col-md-4">
+          	<div class="thumbnail">
+                <a href="{{item.media.m}}" class="image" style="background-image: url({{item.media.m}});"></a>
+	            	<p id="thumbnail-label">Author: {{item.author}}</p>
+                <div class="clearfix"></div>
+        		</div>
+  		</div>
+	 </div>
   </div>
+
 </div>
