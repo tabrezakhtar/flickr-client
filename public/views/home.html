@@ -24,13 +24,16 @@
 
   <div class="panel-body">
     <div class="row">
-  		<div ng-repeat="item in vm.items" class="col-md-4 col-md-4 col-md-4">
-          	<div class="thumbnail">
-                <a href="{{item.media.m}}" class="image" style="background-image: url({{item.media.m}});"></a>
-	            	<p id="thumbnail-label">Author: {{item.author}}</p>
-                <div class="clearfix"></div>
-        		</div>
-  		</div>
+
+      <div masonry style="margin-left: auto; margin-right: auto;">
+    		<div class="masonry-brick" style="padding-left:8px; padding-right:8px;" ng-repeat="item in vm.items">
+            	<div class="thumbnail">
+                  <img ng-src="{{ item.media.m }}" alt="{{item.title}}}" style="width:200px">
+          		</div>
+    		</div>
+      </div>
+
+
 	 </div>
   </div>
 

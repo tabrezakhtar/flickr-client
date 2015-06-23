@@ -1,6 +1,7 @@
 var flickrApp = angular
   .module('flickrApp', [
     'ngRoute', 
+    'wu.masonry',
     'ui.bootstrap',
     'flickrApp.controllers',
 	  'flickrApp.services'
